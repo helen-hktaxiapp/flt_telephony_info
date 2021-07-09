@@ -10,7 +10,7 @@ class FltTelephonyInfo {
   static Future<TelephonyInfo> get info async {
 
     final TelephonyInfo telephonyInfo =
-        TelephonyInfo.fromMap(await _channel.invokeMapMethod<String, dynamic>('getTelephonyInfo'));
+        TelephonyInfo.fromMap(await _channel.invokeMapMethod<String, dynamic>('getTelephonyInfo') ?? Map());
 
     return telephonyInfo;
   }
