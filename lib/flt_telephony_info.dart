@@ -10,7 +10,9 @@ class FltTelephonyInfo {
   static Future<TelephonyInfo> get info async {
 
     final TelephonyInfo telephonyInfo =
-        TelephonyInfo.fromMap(await _channel.invokeMapMethod<String, dynamic>('getTelephonyInfo') ?? Map());
+        TelephonyInfo.fromMap(await (_channel.invokeMapMethod<String, dynamic>('getFlutterTelephony') as FutureOr<Map<String, dynamic>>));
+
+        
 
     return telephonyInfo;
   }
